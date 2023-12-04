@@ -6230,7 +6230,7 @@ MonoBehaviour:
   - {fileID: 782047199}
   - {fileID: 299420037}
   - {fileID: 201683617}
-  spawnInterval: 2
+  spawnInterval: 4
 --- !u!1 &1901813740
 GameObject:
   m_ObjectHideFlags: 0

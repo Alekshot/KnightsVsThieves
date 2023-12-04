@@ -1,17 +1,15 @@
 using System.Collections;
 using UnityEngine;
 
-public class Income_Tower : MonoBehaviour
+public class Income_Tower : Tower
 {
-    public int health;
     public int incomeValue;
     public float interval;
     public GameObject obj_coin;
-    public int cost;
 
-    void Start()
+    protected override void Start()
     {
-        Debug.Log("PINK");
+        Debug.Log("INCOME");
         StartCoroutine(Interval());
     }
 
@@ -33,21 +31,5 @@ public class Income_Tower : MonoBehaviour
         obj_coin.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         obj_coin.SetActive(false);
-    }
-
-    public void LoseHealth()
-    {
-        health--;
-
-        if(health <= 0)
-        {
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        Debug.Log("Tower is dead");
-        Destroy(gameObject);
     }
 }

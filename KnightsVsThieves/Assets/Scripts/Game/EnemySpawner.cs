@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy_Spawner : MonoBehaviour
 {
+    public static Enemy_Spawner instance;
+
+    void Awake() { instance = this; }
+
     public List<GameObject> prefabs;
     public List<Transform> spawnPoints;
     public float spawnInterval = 2f;

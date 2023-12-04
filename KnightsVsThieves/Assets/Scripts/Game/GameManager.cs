@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,5 +14,14 @@ public class GameManager : MonoBehaviour
     {
         GetComponent<HealthSystem>().Init();
         GetComponent<CurrencySystem>().Init();
+
+        StartCoroutine(WaveStartDelay());
+    }
+
+    IEnumerator WaveStartDelay()
+    {
+        yield return new WaitForSeconds(2f);
+
+        GetComponent<Enemy_Spawner>().StartSpawning();
     }
 }
